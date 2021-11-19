@@ -7,19 +7,19 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 import 'package:gas_monitoring/Apidata.dart';
+
 void main() {
   runApp(const MainPage());
 }
 
 class MainPage extends StatefulWidget {
-   const MainPage({Key? key}) : super(key: key);
+  const MainPage({Key? key}) : super(key: key);
   @override
   _MainPageState createState() => _MainPageState();
 }
- 
 
-  // This widget is the root of your application.
- 
+// This widget is the root of your application.
+
 class _MainPageState extends State<MainPage> {
   var finalDate = '';
   late NodeMcu kdata;
@@ -35,10 +35,9 @@ class _MainPageState extends State<MainPage> {
   }
 
   Future<NodeMcu> getData() async {
-    // var url = Uri.parse('http://10.10.168.24:4000');
-    var url = Uri.parse('http://10.10.165.177:3000');
+    //enter the ip address
+    var url = Uri.parse('http://xx.xx.xxx.xxx:xxxx');
     http.Response res = await http.get(url);
-    // var res = await http.get(Uri.http("http://192.168.0.95:3000", ""));
     print(res.body);
     if (res.statusCode == 200) {
       final data = json.decode(res.body);
@@ -120,7 +119,8 @@ class _MainPageState extends State<MainPage> {
                                           ),
                                         )))
                                   ]),
-                            ), onTap: () {  },
+                            ),
+                            onTap: () {},
                           ),
                           _buildTile(
                             Padding(
@@ -160,7 +160,8 @@ class _MainPageState extends State<MainPage> {
                                       ],
                                     ),
                                   ]),
-                            ), onTap: () {  },
+                            ),
+                            onTap: () {},
                           ),
                           _buildTile(
                             Padding(
@@ -199,7 +200,8 @@ class _MainPageState extends State<MainPage> {
                                       ],
                                     ),
                                   ]),
-                            ), onTap: () {  },
+                            ),
+                            onTap: () {},
                           ),
                           _buildTile(
                             Padding(
